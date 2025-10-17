@@ -7,7 +7,7 @@ var deceleration = 0.1
 var acceleration = 0.1
 var jump_force = -400.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	var direction = Input.get_axis("left", "right")
 	

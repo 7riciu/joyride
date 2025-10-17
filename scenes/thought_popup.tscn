@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwc6a27523ii1"]
+
+[ext_resource type="Texture2D" uid="uid://dvcqfdy0ikfph" path="res://icon.svg" id="1_ue7of"]
+
+[node name="Speech" type="CanvasLayer"]
+
+[node name="TextRect" type="TextureRect" parent="." groups=["thought rect"]]
+visible = false
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.74100006
+anchor_right = 0.81900007
+anchor_bottom = 0.938
+offset_left = -0.01600647
+offset_top = -0.16802979
+offset_right = 0.51190186
+offset_bottom = 0.17596436
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_ue7of")
+
+[node name="Text" type="Label" parent="." groups=["thought text"]]
+visible = false
+anchors_preset = -1
+anchor_left = 0.186
+anchor_top = 0.76400006
+anchor_right = 0.79300004
+anchor_bottom = 0.91200006
+offset_left = -0.27200317
+offset_top = -0.072052
+offset_right = -0.5360718
+offset_bottom = 0.023986816

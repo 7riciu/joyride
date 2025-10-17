@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ogj46flheesp"]
+
+[ext_resource type="PackedScene" uid="uid://dvqy3qha0nh6w" path="res://scenes/object.tscn" id="1_jehp2"]
+[ext_resource type="PackedScene" uid="uid://bl5dmmjsmssmp" path="res://scenes/player.tscn" id="2_64bsv"]
+[ext_resource type="PackedScene" uid="uid://dwc6a27523ii1" path="res://scenes/thought_popup.tscn" id="3_bxm2c"]
+[ext_resource type="PackedScene" uid="uid://c02tseb8q0kl1" path="res://scenes/door.tscn" id="4_64bsv"]
+
+[node name="room" type="Node2D"]
+
+[node name="Object" parent="." instance=ExtResource("1_jehp2")]
+position = Vector2(688, 325)
+
+[node name="player" parent="." instance=ExtResource("2_64bsv")]
+position = Vector2(459, 327)
+
+[node name="Speech" parent="." instance=ExtResource("3_bxm2c")]
+
+[node name="door" parent="." instance=ExtResource("4_64bsv")]
+position = Vector2(1076, 249)
