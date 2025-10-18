@@ -11,19 +11,14 @@ var movement_paused = false
 
 func _physics_process(_delta: float) -> void:
 	
-	var direction = Input.get_axis("left", "right")
+	var direction = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("up", "down")
+	)
 	
-	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, speed * acceleration)
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed * deceleration)
-		
-	if direction == 1:
-		player_sprite.flip_h = true
-	elif direction == -1:
-		player_sprite.flip_h = false
+	velocity = direction * speed
 		
 	if movement_paused:
-		velocity.x = 0
+		velocity = Vector2(0, 0)
 		
 	move_and_slide()
