@@ -7,6 +7,8 @@ var deceleration = 0.1
 var acceleration = 0.1
 var jump_force = -400.0
 
+var movement_paused = false
+
 func _physics_process(_delta: float) -> void:
 	
 	var direction = Input.get_axis("left", "right")
@@ -20,5 +22,8 @@ func _physics_process(_delta: float) -> void:
 		player_sprite.flip_h = true
 	elif direction == -1:
 		player_sprite.flip_h = false
-	
+		
+	if movement_paused:
+		velocity.x = 0
+		
 	move_and_slide()

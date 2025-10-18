@@ -5,6 +5,7 @@
 [node name="Speech" type="CanvasLayer"]
 
 [node name="TextRect" type="TextureRect" parent="." groups=["thought rect"]]
+process_mode = 3
 visible = false
 anchors_preset = -1
 anchor_left = 0.158
