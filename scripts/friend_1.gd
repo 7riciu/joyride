@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 @onready var player_sprite = get_tree().get_first_node_in_group("player")
-
+@onready var interact_area = $InteractArea
 var keep_distance = 100
 var speed = 300.0
-var jump = -400.0
-
-func _physics_process(_delta: float) -> void:
 	
+func _process(_delta: float) -> void:
+	if interact_area.following:
+		follow()
+	
+func follow():
 	if player_sprite == null:
 		return
 

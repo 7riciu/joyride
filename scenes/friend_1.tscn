@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0hwhnet0nxrb"]
+[gd_scene load_steps=8 format=3 uid="uid://c0hwhnet0nxrb"]
 
 [ext_resource type="Script" uid="uid://2ck2o1wyqu11" path="res://scripts/friend_1.gd" id="1_hda73"]
 [ext_resource type="Texture2D" uid="uid://dvcqfdy0ikfph" path="res://icon.svg" id="1_kexj6"]
+[ext_resource type="Script" uid="uid://ch5gydsr24h2u" path="res://scripts/friend_1_area.gd" id="3_gesda"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hda73"]
 atlas = ExtResource("1_kexj6")
@@ -21,7 +22,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kexj6"]
 size = Vector2(68, 70)
 
-[node name="friend1" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5re4"]
+size = Vector2(88, 35)
+
+[node name="friend1" type="CharacterBody2D" groups=["friend 1"]]
 script = ExtResource("1_hda73")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -31,3 +35,10 @@ sprite_frames = SubResource("SpriteFrames_gesda")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kexj6")
 disabled = true
+
+[node name="InteractArea" type="Area2D" parent="."]
+script = ExtResource("3_gesda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_f5re4")

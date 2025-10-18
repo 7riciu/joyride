@@ -5,7 +5,6 @@ extends CharacterBody2D
 var speed = 300.0
 var deceleration = 0.1
 var acceleration = 0.1
-var jump_force = -400.0
 
 var movement_paused = false
 
