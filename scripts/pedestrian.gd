@@ -11,7 +11,7 @@ var is_bumped = false
 var movement_paused = false
 var text_on_screen = false
 
-var speed = 100.0
+var speed = 300.0
 var direction = -1
 
 func _ready() -> void:
@@ -58,5 +58,5 @@ func dialog():
 	
 func respawn():
 	global_position = spawner.global_position
-	velocity = Vector2.ZERO
+	velocity.x = 0
 	print("Pedestrian respawned")

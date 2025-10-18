@@ -6,8 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://c02tseb8q0kl1" path="res://scenes/door.tscn" id="4_64bsv"]
 
 [node name="room" type="Node2D"]
+y_sort_enabled = true
 
-[node name="Object" parent="." instance=ExtResource("1_jehp2")]
+[node name="door_spawm" type="Node2D" parent="." groups=["door room"]]
+position = Vector2(1001, 324)
+
+[node name="object" parent="." instance=ExtResource("1_jehp2")]
 position = Vector2(688, 325)
 
 [node name="player" parent="." instance=ExtResource("2_64bsv")]
@@ -15,5 +19,5 @@ position = Vector2(459, 327)
 
 [node name="Speech" parent="." instance=ExtResource("3_bxm2c")]
 
-[node name="door" parent="." instance=ExtResource("4_64bsv")]
+[node name="door1" parent="." instance=ExtResource("4_64bsv")]
 position = Vector2(1076, 249)

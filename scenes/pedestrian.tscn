@@ -19,10 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yk555"]
-size = Vector2(58, 162)
+size = Vector2(58, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a5i"]
-size = Vector2(70, 175)
+size = Vector2(70, 54)
 
 [node name="pedestrian" type="CharacterBody2D" groups=["pedestrian"]]
 script = ExtResource("1_ccstn")
@@ -33,10 +33,11 @@ scale = Vector2(0.44531253, 1.2734375)
 sprite_frames = SubResource("SpriteFrames_cb6cf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 61.5)
 shape = SubResource("RectangleShape2D_yk555")
 
 [node name="BumpArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BumpArea"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 61)
 shape = SubResource("RectangleShape2D_y7a5i")

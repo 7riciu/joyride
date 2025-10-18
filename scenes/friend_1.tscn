@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0hwhnet0nxrb"]
+
+[ext_resource type="Script" uid="uid://2ck2o1wyqu11" path="res://scripts/friend_1.gd" id="1_hda73"]
+[ext_resource type="Texture2D" uid="uid://dvcqfdy0ikfph" path="res://icon.svg" id="1_kexj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hda73"]
+atlas = ExtResource("1_kexj6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gesda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hda73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kexj6"]
+size = Vector2(68, 70)
+
+[node name="friend1" type="CharacterBody2D"]
+script = ExtResource("1_hda73")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5390625, 0.5546875)
+sprite_frames = SubResource("SpriteFrames_gesda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kexj6")
+disabled = true
