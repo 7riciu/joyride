@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ekqjb4jxfcm"]
+
+[ext_resource type="Script" uid="uid://csq8286i8m0om" path="res://scripts/pedestrian_limit.gd" id="1_nnv2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ear2w"]
+size = Vector2(20, 40)
+
+[node name="pedestrian_limit" type="Area2D" groups=["pedestrian limit"]]
+script = ExtResource("1_nnv2s")
+
+[node name="LimitArea" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_ear2w")

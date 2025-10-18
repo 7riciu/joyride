@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://sij6cbektsud"]
+[gd_scene load_steps=6 format=3 uid="uid://sij6cbektsud"]
 
 [ext_resource type="PackedScene" uid="uid://c02tseb8q0kl1" path="res://scenes/door.tscn" id="1_tr5t1"]
 [ext_resource type="PackedScene" uid="uid://bl5dmmjsmssmp" path="res://scenes/player.tscn" id="2_l8dq3"]
+[ext_resource type="PackedScene" uid="uid://caefp7lralxyr" path="res://scenes/pedestrian.tscn" id="3_3ffmx"]
+[ext_resource type="PackedScene" uid="uid://dwc6a27523ii1" path="res://scenes/thought_popup.tscn" id="4_t23v0"]
+[ext_resource type="PackedScene" uid="uid://c3ekqjb4jxfcm" path="res://scenes/pedestrian_limit.tscn" id="5_yrasx"]
 
 [node name="street" type="Node2D"]
 
@@ -10,3 +13,14 @@ position = Vector2(77, 304)
 
 [node name="player" parent="." instance=ExtResource("2_l8dq3")]
 position = Vector2(229, 401)
+
+[node name="pedestrian" parent="." instance=ExtResource("3_3ffmx")]
+position = Vector2(1160, 387)
+
+[node name="pedestrian_spawner" type="Node2D" parent="." groups=["pedestrian spawner"]]
+position = Vector2(1160, 387)
+
+[node name="Speech" parent="." instance=ExtResource("4_t23v0")]
+
+[node name="pedestrian_limit" parent="." instance=ExtResource("5_yrasx")]
+position = Vector2(1058, 462)

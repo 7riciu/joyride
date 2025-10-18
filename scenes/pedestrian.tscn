@@ -1,11 +1,42 @@
-[gd_scene format=3 uid="uid://caefp7lralxyr"]
+[gd_scene load_steps=7 format=3 uid="uid://caefp7lralxyr"]
 
-[node name="pedestrian" type="CharacterBody2D"]
+[ext_resource type="Script" uid="uid://cox85tgwq3k7f" path="res://scripts/pedestrian.gd" id="1_ccstn"]
+[ext_resource type="Texture2D" uid="uid://dvcqfdy0ikfph" path="res://icon.svg" id="2_55wug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t8nm"]
+atlas = ExtResource("2_55wug")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cb6cf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t8nm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk555"]
+size = Vector2(58, 162)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7a5i"]
+size = Vector2(70, 175)
+
+[node name="pedestrian" type="CharacterBody2D" groups=["pedestrian"]]
+script = ExtResource("1_ccstn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.44531253, 1.2734375)
+sprite_frames = SubResource("SpriteFrames_cb6cf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yk555")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="BumpArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumpArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y7a5i")
